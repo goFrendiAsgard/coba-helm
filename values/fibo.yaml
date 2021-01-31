@@ -1,0 +1,10 @@
+app:
+  name: fibo
+  group: db
+  container:
+    image: stalchmst/fibo:v0.0.0
+    port: 8080
+    env:
+    - key: HTTP_PORT
+      value: 8080
+      
