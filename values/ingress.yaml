@@ -1,15 +1,17 @@
 ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
   hosts:
-  - host: localhost
+  - host: api.gofrendi.kube.docker.internal
     paths:
-    - path: /api(/|$)(.*)
+    - path: /
       backend:  
         serviceName: myservice
         servicePort: 8080
-    - path: /()(.*)
+  - host: gofrendi.kube.docker.internal
+    paths:
+    - path: /
       backend:
         serviceName: fibo
         servicePort: 8080

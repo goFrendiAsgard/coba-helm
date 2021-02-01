@@ -10,11 +10,22 @@ Bukan apa-apa, cuma coba belajar helm saja. Artikel:
 
 Lihat `do.sh`
 
-```
+```sh
 kubectl config view
 kubectl config use-context docker-desktop
 helmfile repos
 helmfile sync
+# helmfile destroy
+```
+
+Tambahkan ini ke hostfile:
+
+* windows (WSL): C:\\Windows\System32\drivers\etc\hosts
+* ubuntu: /etc/hosts
+
+```
+127.0.0.1 gofrendi.kube.docker.internal
+127.0.0.1 api.gofrendi.kube.docker.internal
 ```
 
 # Kasih penjelasan dikit dong
