@@ -1,0 +1,4 @@
+app:
+  container:
+    repo: stalchmst
+    imageTag: v0.0.0

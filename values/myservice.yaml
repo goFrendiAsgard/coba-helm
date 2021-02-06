@@ -2,7 +2,7 @@ app:
   name: myservice
   group: db
   container:
-    image: stalchmst/myservice:v0.0.0
+    image: myservice
     port: 8080
     env:
     - key: MYSERVICE_HTTP_PORT

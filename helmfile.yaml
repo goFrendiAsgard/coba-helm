@@ -7,11 +7,13 @@ releases:
 - name: fibo
   chart: ./charts/app
   values:
+  - ./values/env/{{ if env "env"}}{{ env "env" }}{{ else }}latest{{ end }}.yaml
   - ./values/fibo.yaml
 
 - name: myservice
   chart: ./charts/app
   values:
+  - ./values/env/{{ if env "env"}}{{ env "env" }}{{ else }}latest{{ end }}.yaml
   - ./values/myservice.yaml
 
 - name: ingress-backend

@@ -3,7 +3,9 @@ app:
   group: app
   replicaCount: 1
   container:
+    repo: add-repo-here
     image: add-image-here
+    imageTag: add-image-tag-here
     port: 8080
     config: []
     env:
