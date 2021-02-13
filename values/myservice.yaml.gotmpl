@@ -2,6 +2,8 @@ app:
   name: myservice
   group: db
   container:
+    imagePrefix: {{ .Values | get "commonImagePrefix" "local" }}
+    imageTag: {{ .Values | get "commonImageTag" "latest" }}
     image: myservice
     port: 8080
     env:

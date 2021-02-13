@@ -1,3 +1,13 @@
+environments:
+  default:
+    values:
+    - commonImagePrefix: stalchmst
+    - commonImageTag: latest
+  stable:
+    values:
+    - commonImagePrefix: stalchmst
+    - commonImageTag: v0.0.0
+
 repositories:
 - name: stable
   url: https://charts.helm.sh/stable/
@@ -7,14 +17,12 @@ releases:
 - name: fibo
   chart: ./charts/app
   values:
-  - ./values/env/{{ if env "env"}}{{ env "env" }}{{ else }}latest{{ end }}.yaml
-  - ./values/fibo.yaml
+  - ./values/fibo.yaml.gotmpl
 
 - name: myservice
   chart: ./charts/app
   values:
-  - ./values/env/{{ if env "env"}}{{ env "env" }}{{ else }}latest{{ end }}.yaml
-  - ./values/myservice.yaml
+  - ./values/myservice.yaml.gotmpl
 
 - name: ingress-backend
   chart: stable/nginx-ingress
@@ -23,4 +31,4 @@ releases:
 - name: ingress-controller
   chart: ./charts/ingress
   values:
-  - ./values/ingress.yaml
+  - ./values/ingress.yaml.gotmpl
