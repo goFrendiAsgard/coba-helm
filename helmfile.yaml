@@ -1,11 +1,11 @@
 environments:
   default:
     values:
-    - commonImagePrefix: stalchmst
+    - commonImagePrefix: {{ env "IMAGE_PREFIX" | default "local" }}
     - commonImageTag: latest
   stable:
     values:
-    - commonImagePrefix: stalchmst
+    - commonImagePrefix: {{ env "IMAGE_PREFIX" | default "local" }}
     - commonImageTag: v0.0.0
 
 repositories:
